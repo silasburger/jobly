@@ -21,6 +21,7 @@ class App extends Component {
     if (token) {
       let payload = jwt.decode(token);
       let currUser = await JoblyApi.getUser(payload.username);
+      console.log(currUser);
       this.setState({ currUser });
     }
     this.setState({ isLoading: false });
@@ -35,6 +36,7 @@ class App extends Component {
     let token = localStorage.getItem('token');
     console.log('token',token);
     let payload = jwt.decode(token);
+    console.log(payload);
     let currUser = await JoblyApi.getUser(payload.username);
     this.setState({ currUser });
   }

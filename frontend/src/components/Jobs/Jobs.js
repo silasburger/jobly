@@ -21,6 +21,7 @@ class Jobs extends Component {
 
   async componentDidMount() {
     try {
+      console.log('here!!')
       let response = await JoblyApi.getJobs('');
       this.setState({ jobCards: response, isLoading: false });
       console.log(response);

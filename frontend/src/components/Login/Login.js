@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import JoblyApi from '../../JoblyApi';
+import uuid from 'uuid/v4'
 import './Login.css';
 import {
   Button,
@@ -103,7 +104,7 @@ class Login extends Component {
 
   render() {
     let errorsAlerts = this.state.errors.map(err => (
-      <Alert className="m-0" color="danger" key={err}>
+      <Alert key={uuid()} className="m-0" color="danger" key={err}>
         {err}
       </Alert>
     ));

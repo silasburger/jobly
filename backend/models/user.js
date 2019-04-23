@@ -31,7 +31,7 @@ class User {
   //check if hashed password matches 
   static async login({username, password}) {
       const res = await db.query(
-        ` SELECT password, is_admin FROM users WHERE username = $1`
+        ` SELECT password, is_admin, username FROM users WHERE username = $1`
         , [username]);
       const user = res.rows[0];
       if(user) {

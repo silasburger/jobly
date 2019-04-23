@@ -12,6 +12,7 @@ const {ensureLoggedIn, isAdmin} = require('../middleware/auth');
 router.get('/', ensureLoggedIn, async function (req, res, next) {
   try {
     const result = await Job.getMatchedJobs(req.query);
+    console.log(result);
     return res.json(result);
   } catch (err) {
     return next(err);

@@ -23,7 +23,7 @@ class NavigationBar extends Component {
         );
       }
       return (
-        <NavItem className='nav'>
+        <NavItem className='nav' key={uuid()}>
           <NavLink to={`/${navLink}`}>{navLink}</NavLink>
         </NavItem>
       );

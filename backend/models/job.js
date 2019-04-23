@@ -10,7 +10,7 @@ class Job {
     // Checks the parameters are valid
     min_salary = min_salary === undefined ? 0 : +min_salary;
     min_equity = min_equity === undefined ? 0 : +min_equity;
-    search = search === undefined ? '%%' : `%${search}%`;
+    search = `%${search}%`;
 
     const jobRes = await db.query(
       `

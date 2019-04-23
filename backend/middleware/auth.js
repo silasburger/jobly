@@ -5,8 +5,8 @@ const {SECRET} = require('../config');
 
 function ensureLoggedIn(req, res, next) {
   try {
-    const tokenFromBody = req.body.token;
-    jwt.verify(tokenFromBody, SECRET);
+    const tokenFromReq = req.body._token || req.query._token;
+    jwt.verify(tokenFromReq, SECRET);
     return next();
   }
 
@@ -17,8 +17,8 @@ function ensureLoggedIn(req, res, next) {
 
 function ensureCorrectUser(req, res, next) {
   try {
-    const tokenFromBody = req.body.token;
-    const token = jwt.verify(tokenFromBody, SECRET);
+    const tokenFromReq = req.body._token || req.query._token;
+    const token = jwt.verify(tokenFromReq, SECRET);
     if(token.username === req.params.username){
       return next();
     } else {
@@ -33,8 +33,8 @@ function ensureCorrectUser(req, res, next) {
 
 function isAdmin(req, res, next) {
   try {
-    const tokenFromBody = req.body.token;
-    const token = jwt.verify(tokenFromBody, SECRET);
+    const tokenFromReq = req.body._token || req.query._token;
+    const token = jwt.verify(tokenFromReq, SECRET);
     if(token.isAdmin === true) {
       return next();
     } else {
