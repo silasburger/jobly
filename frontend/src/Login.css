@@ -1,0 +1,23 @@
+.login-card {
+  margin: 6rem auto;
+  background-color: rgba(66, 133, 244);
+  width: 30%;
+  min-width: 200px;
+  box-shadow: -10px 10px 20px -5px #777;
+}
+
+.login-buttons {
+  position: absolute;
+  top: -38px;
+  left:0;
+}
+
+.login-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('./background.jpg');
+  background-attachment: fixed;
+}

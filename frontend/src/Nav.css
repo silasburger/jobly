@@ -1,0 +1,20 @@
+a.active {
+  color: #999;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.nav-item {
+  margin-left: 9px;
+}
+
+.nav-item a {
+  font-size: 1em;
+}
+
+nav {
+  background-color: #333;
+  height: 20px;
+}

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for jubilant-pancake/models/job.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">jubilant-pancake/models</a> job.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const db = require('../db');
+const partialUpdate = require('../helpers/partialUpdate');
+&nbsp;
+class Job {
+&nbsp;
+  //takes query parameters search, min_salary, min_equity
+  //gives back jobs that meet the parameter constrains
+  //return { jobs: jobRes.rows }
+<span class="fstat-no" title="function not covered" >  st</span>atic async getMatchedJobs({ search, min_salary, min_equity }) {
+    // Checks the parameters are valid
+<span class="cstat-no" title="statement not covered" >    min_salary = min_salary === undefined ? 0 : +min_salary;</span>
+<span class="cstat-no" title="statement not covered" >    min_equity = min_equity === undefined ? 0 : +min_equity;</span>
+<span class="cstat-no" title="statement not covered" >    search = search === undefined ? '%%' : `%${search}%`;</span>
+&nbsp;
+    const jobRes = <span class="cstat-no" title="statement not covered" >await db.query(</span>
+      `
+    SELECT title, company_handle 
+    FROM jobs 
+    WHERE salary &gt;= $1
+    AND equity &gt;= $2
+    AND (title ILIKE $3 OR company_handle ILIKE $3)
+    ORDER BY date_posted desc
+    `,
+      [min_salary, min_equity, search]
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return { jobs: jobRes.rows };</span>
+  }
+&nbsp;
+  //takes req.body (company info)
+  //inserts company into jobs table and returns job info when created
+  //return { job: jobRes.rows[0] }
+<span class="fstat-no" title="function not covered" >  st</span>atic async create({ title, salary, equity, company_handle }) {
+    const jobRes = <span class="cstat-no" title="statement not covered" >await db.query(</span>
+      `INSERT INTO jobs ( title, salary, equity, company_handle, date_posted) 
+      VALUES ($1, $2, $3, $4, LOCALTIMESTAMP) 
+      RETURNING title, salary, equity, company_handle, date_posted`,
+      [title, salary, equity, company_handle]
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return { job: jobRes.rows[0] };</span>
+  }
+&nbsp;
+  //takes id as query parameter 
+  //gets job that matches id and returns job info
+  //return { jobs: jobRes.rows[0] }
+<span class="fstat-no" title="function not covered" >  st</span>atic async get(id) {
+    const jobRes = <span class="cstat-no" title="statement not covered" >await db.query(</span>
+      `SELECT title, salary, equity, company_handle, date_posted
+       FROM jobs 
+       WHERE id=$1`,
+      [+id]
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (jobRes.rows.length === 0) {</span>
+      let notFoundError = <span class="cstat-no" title="statement not covered" >new Error(</span>
+        `There exists no job with an id of ${id}`
+      );
+<span class="cstat-no" title="statement not covered" >      notFoundError.status = 404;</span>
+<span class="cstat-no" title="statement not covered" >      throw notFoundError;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return jobRes.rows[0];</span>
+    // return { job: jobRes.rows[0] }
+  }
+&nbsp;
+  //takes id as query parameter and an object with values to change
+  //returns company data of updated company
+  //return { job: jobRes.rows[0] }
+<span class="fstat-no" title="function not covered" >  st</span>atic async update(changeObj, id) {
+    const query = <span class="cstat-no" title="statement not covered" >partialUpdate('jobs', changeObj, 'id', id);</span>
+&nbsp;
+    const jobRes = <span class="cstat-no" title="statement not covered" >await db.query(query.query, query.values);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (jobRes.rows.length === 0) {</span>
+      let notFoundError = <span class="cstat-no" title="statement not covered" >new Error(</span>
+        `There exists no jobs with an id of ${id}`
+      );
+<span class="cstat-no" title="statement not covered" >      notFoundError.status = 404;</span>
+<span class="cstat-no" title="statement not covered" >      throw notFoundError;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return { job: jobRes.rows[0] };</span>
+  }
+&nbsp;
+  //deletes job from databse and returns confirmation message
+<span class="fstat-no" title="function not covered" >  st</span>atic async delete(id) {
+    const jobRes = <span class="cstat-no" title="statement not covered" >await db.query(</span>
+      `DELETE FROM jobs WHERE id = $1 RETURNING id`,
+      [id]
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (jobRes.rows.length === 0) {</span>
+      let notFoundError = <span class="cstat-no" title="statement not covered" >new Error(</span>
+        `Not Found`
+      );
+<span class="cstat-no" title="statement not covered" >      notFoundError.status = 404;</span>
+<span class="cstat-no" title="statement not covered" >      throw notFoundError;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return { message: 'Job Deleted!!!' }; </span>//should be true; thats more api like
+  }
+&nbsp;
+}
+&nbsp;
+&nbsp;
+module.exports = Job;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 16 2018 15:33:47 GMT-0800 (Pacific Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
