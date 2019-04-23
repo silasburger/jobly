@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import JoblyApi from './JoblyApi';
+import JoblyApi from '../../JoblyApi';
 import {Card, CardImg, CardBody, CardTitle, Button} from 'reactstrap';
 
 //Shows basic info on card used on company page and jobs page

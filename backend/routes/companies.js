@@ -2,7 +2,7 @@ const express = require('express');
 const router = new express.Router();
 const postCompanySchema = require('../schema/postCompanySchema');
 const patchCompanySchema = require('../schema/patchCompanySchema');
-const Company = require('../models/company.js');
+const Company = require('../models/Company.js');
 const validateJsonSchema = require('../helpers/validateJsonSchema');
 const {ensureLoggedIn, isAdmin} = require('../middleware/auth');
 

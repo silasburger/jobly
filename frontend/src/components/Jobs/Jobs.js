@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Search from './Search';
-import JoblyApi from './JoblyApi';
+import Search from '../Search';
+import JoblyApi from '../../JoblyApi';
 import { Alert } from 'reactstrap';
-import JobCard from './JobCard';
+import JobCard from '../JobCard';
 import './Jobs.css';
 
 //This renders the job page with job cards

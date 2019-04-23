@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Search from './Search';
-import CompanyCard from './CompanyCard';
-import JoblyApi from './JoblyApi';
+import Search from '../Search';
+import CompanyCard from '../CompanyCard';
+import JoblyApi from '../../JoblyApi';
 import {Alert} from 'reactstrap';
-import logoDefaultUrl from './company-logo.png';
+import logoDefaultUrl from '../../assets/company-logo.png';
 import { Redirect } from 'react-router-dom';
 import './Companies.css';
 

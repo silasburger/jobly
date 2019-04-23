@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
+import Routes from '../Routes';
 import jwt from 'jsonwebtoken';
-import NavigationBar from './NavigationBar';
-import JoblyApi from './JoblyApi';
+import NavigationBar from '../NavigationBar';
+import JoblyApi from '../../JoblyApi';
 import './App.css'
 
 class App extends Component {
@@ -33,6 +33,7 @@ class App extends Component {
 
   async handleLogin() {
     let token = localStorage.getItem('token');
+    console.log('token',token);
     let payload = jwt.decode(token);
     let currUser = await JoblyApi.getUser(payload.username);
     this.setState({ currUser });

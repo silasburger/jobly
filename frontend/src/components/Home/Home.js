@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Jumbotron, Media } from 'reactstrap';
 import './Home.css';
-import photo from './50958.svg';
+import photo from '../../assets/50958.svg';
 
 class Home extends Component {
   render() {

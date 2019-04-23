@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3000";
 
 //handles api requests to server then to jobly database
 class JoblyApi {
@@ -26,6 +26,7 @@ class JoblyApi {
     try {
       return (await q).data;
     } catch (err) {
+      console.error(err);
       console.error('API Error:', err.response);
       let message = err.response.data.message;
       throw Array.isArray(message) ? message : [message];
@@ -49,6 +50,7 @@ class JoblyApi {
 
   static async login(username, password) {
     let res = await JoblyApi.request(`login`, { username, password }, 'post');
+    console.log('login', res);
     return res.token;
   }
 

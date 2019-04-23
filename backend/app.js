@@ -4,6 +4,12 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+//add cors
+
+const cors = require("cors");
+app.use(cors());
+
+
 // add logging system
 
 const morgan = require('morgan');

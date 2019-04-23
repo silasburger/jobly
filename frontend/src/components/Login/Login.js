@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import JoblyApi from './JoblyApi';
+import JoblyApi from '../../JoblyApi';
 import './Login.css';
 import {
   Button,
@@ -63,6 +63,7 @@ class Login extends Component {
           this.state.username,
           this.state.password
         );
+        console.log('set token', token);
         localStorage.setItem('token', token);
         this.setState({ username: '', password: '' });
         await this.props.handleLogin();
@@ -93,15 +94,18 @@ class Login extends Component {
       }
     } catch (err) {
       // set State this.state.errors = with new error
-      this.setState(st => ({
+      console.log(err);
+      this.setState({
         errors: err
-      }));
+      });
     }
   }
 
   render() {
     let errorsAlerts = this.state.errors.map(err => (
-      <Alert className="m-0" color="danger" key={err}>{err}</Alert>
+      <Alert className="m-0" color="danger" key={err}>
+        {err}
+      </Alert>
     ));
 
     let loginInputs = [
@@ -156,7 +160,7 @@ class Login extends Component {
 
     if (this.state.activeForm === 'login') {
       inputs = loginInputs.map(input => (
-        <FormGroup> 
+        <FormGroup>
           <Label htmlFor={input.inputName}>{input.label}</Label>
           <Input
             type={input.type}
@@ -164,15 +168,13 @@ class Login extends Component {
             value={this.state[input.inputName]}
             id={input.inputName}
             onChange={this.handleChange}
-            />
+          />
         </FormGroup>
       ));
     } else {
       inputs = signupInputs.map(input => (
         <FormGroup>
-          <Label htmlFor={input.inputName}>
-            {input.label}
-          </Label>
+          <Label htmlFor={input.inputName}>{input.label}</Label>
           <Input
             type={input.type}
             name={input.inputName}
@@ -185,14 +187,19 @@ class Login extends Component {
     }
 
     return (
-      <div className='login-container'>
+      <div className="login-container">
         <Card className="login-card" inverse>
           {this.state.errors.length > 0 ? errorsAlerts : null}
           <div className="login-buttons">
-            {this.state.activeForm === 'login' ? 
-            <Button onClick={this.changeToSignup} color="success">Signup</Button> :
-            <Button onClick={this.changeToLogin} color="success">Login</Button> 
-          }
+            {this.state.activeForm === 'login' ? (
+              <Button onClick={this.changeToSignup} color="success">
+                Signup
+              </Button>
+            ) : (
+              <Button onClick={this.changeToLogin} color="success">
+                Login
+              </Button>
+            )}
           </div>
           <Form onSubmit={this.handleSubmit} className="m-4">
             {inputs}

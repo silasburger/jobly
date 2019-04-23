@@ -2,7 +2,7 @@ import { Navbar, NavbarBrand, NavItem, Nav } from 'reactstrap';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import uuid from 'uuid/v4';
-import './Nav.css';
+import './NavigationBar.css';
 
 //Top navigation used everywhere on app/site
 class NavigationBar extends Component {

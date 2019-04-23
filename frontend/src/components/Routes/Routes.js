@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Home from './Home';
-import Companies from './Companies';
-import Jobs from './Jobs';
-import Profile from './Profile';
-import Login from './Login';
-import Company from './Company';
+import Home from '../Home';
+import Companies from '../Companies';
+import Jobs from '../Jobs';
+import Profile from '../Profile';
+import Login from '../Login';
+import Company from '../Company';
 
 //Creates routes for for all crucial jobly pages
 class Routes extends Component {

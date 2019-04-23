@@ -31,16 +31,17 @@ class User {
   //check if hashed password matches 
   static async login({username, password}) {
       const res = await db.query(
-        ` SELECT password FROM users WHERE username = $1`
+        ` SELECT password, is_admin FROM users WHERE username = $1`
         , [username]);
       const user = res.rows[0];
       if(user) {
-        if(await bcrypt.compare(username, user.password)) {
-          let token = jwt.sign({username}, SECRET, OPTIONS);
-          return { token };
+        if(await bcrypt.compare(password, user.password)) {
+          return user;
         }
       }
-      return { message: 'Invalid credentials'};
+    const invalidPass = new Error("Invalid Credentials");
+    invalidPass.status = 401;
+    throw invalidPass;
   }
 
   //gets all users from users table
